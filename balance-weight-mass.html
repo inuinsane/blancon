@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Balance Weight Mass calculator adalah bagian dari Aplikasi BLANCON (Balancing Optimization). Balance weight mass calculator berfungsi untuk membantu pelaksana balancing dalam menentukan dimensi balance weight berdasarkan material yang dimiliki. Penggunaan aplikasi ini dapat menghemat banyak waktu tanpa perlu trial error dalam penentuan dimensi balance weight.">
+    <link rel="shortcut icon" href="./favicon/android-chrome-512x512.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>BLANCON | Balance Weight Mass</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg rounded-4 bg-light p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./favicon/only.png" alt="blancon-logo">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./balance-weight-mass.html">Balance Weight Mass</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./split-balance-weight.html">Split Balance Weight</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./residual-ubalance-standard.html">Residual Unbalance Standard</a>
+                        </li>
+                    </ul>
+                </div>
+                <span class="navbar-text">
+                    <strong class="text-info">
+                        BLANCON
+                    </strong>
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- end of navbar -->
+
+        <!-- main -->
+        <main>
+            <div class="row">
+                <!-- Petunjuk penggunaan -->
+                <div class="col-md-6 mt-2">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button bg-info text-white" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    <strong class="text-center">
+                                        Cara Penggunaan
+                                    </strong>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ol>
+                                        <li>Masukkan data berat material</li>
+                                        <li>masukkan data tebal material</li>
+                                        <li>Pilih jenis material di menu choose material</li>
+                                        <li>Pilih bentuk material di menu form material</li>
+                                        <li>Klik tombol <button class="btn btn-info btn-sm text-white">Calculate
+                                                !</button> sehingga didapat nilai lebar (width), panjang
+                                            (length), dan diameter</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kalkulator -->
+                <div class="col-md-6 mt-2">
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button bg-info text-white" type="button" data-bs-toggle=""
+                                    data-bs-target="" aria-expanded="true" aria-controls="collapseTwo">
+                                    <strong class="text-center">
+                                        Balance Weight Mass Calculator
+                                    </strong>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <!-- input massa -->
+                                    <div class="input-group mb-3 col-md-6">
+                                        <span class="input-group-text">Weight</span>
+                                        <input type="number" class="form-control" placeholder="massa"
+                                            aria-label="weight" name="weight" id="input1">
+                                        <span class="input-group-text">gr</span>
+                                    </div>
+
+                                    <!-- input tebal -->
+                                    <div class="input-group mb-3 col-md-6">
+                                        <span class="input-group-text">Depth</span>
+                                        <input type="number" class="form-control" placeholder="tebal" aria-label="depth"
+                                            id="input2">
+                                        <span class="input-group-text">mm</span>
+                                    </div>
+
+                                    <!-- input material -->
+                                    <label for="material">Material</label>
+                                    <select name="material" id="material" class="form-select">
+                                        <option value="" disabled selected>choose material</option>
+                                        <option value="Alumunium" id="alm1"> Aluminiun </option>
+                                        <option value="Brass" id="brass1"> Brass </option>
+                                        <option value="Carbon" id="crb1"> Carbon </option>
+                                        <option value="Tin Bronze" id="tb1"> Tin Bronze </option>
+                                        <option value="Concrete" id="concrete1"> Concrete </option>
+                                        <option value="Copper" id="copper1"> Copper </option>
+                                        <option value="Carbon Steel" id="cs1"> Carbon Steel </option>
+                                        <option value="Chrome Steel" id="cs2"> Chrome Steel </option>
+                                        <option value="White iron" id="wi1"> White iron </option>
+                                        <option value="Stainless steel" id="ss1"> Stainless steel (304) </option>
+                                        <option value="Titanium alloy" id="ta1"> Titanium alloy </option>
+                                    </select>
+
+                                    <!-- input bentuk dimensi -->
+                                    <label for="form" class="mt-2">Form (Bentuk)</label>
+                                    <select name="form" id="form" class="form-select">
+                                        <option value="" disabled selected>choose form</option>
+                                        <option value="lw11" id="lw11"> Length and width (1:1) </option>
+                                        <option value="lw21" id="lw21"> Length and width (2:1) </option>
+                                        <option value="lw43" id="lw43"> Length and width (4:3) </option>
+                                        <option value="Circle" id="circle">Circle </option>
+                                    </select>
+
+
+                                    <!-- tombol -->
+                                    <div class="input-group mt-2 col-md-6">
+                                        <button class="btn btn-info text-white" id="tombol">
+                                            Calculate !
+                                        </button>
+                                        <button class="btn btn-white" id="refresh">
+                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                            Refresh
+                                        </button>
+                                    </div>
+
+
+                                    <!-- hasil panjang dan lebar -->
+                                    <div class="row">
+                                        <div class="input-group mt-5 col-md-6">
+                                            <span class="input-group-text">
+                                                Length (Panjang)
+                                            </span>
+                                            <input type="number" name="length" id="output2" class="form-control"
+                                                disabled>
+                                            <span class="input-group-text">
+                                                mm
+                                            </span>
+                                        </div>
+                                        <div class="input-group mt-3 col-md-6">
+                                            <span class="input-group-text">
+                                                Width (Lebar)
+                                            </span>
+                                            <input type="number" name="width" id="output1" class="form-control"
+                                                disabled>
+                                            <span class="input-group-text">
+                                                mm
+                                            </span>
+                                        </div>
+                                        <div class="input-group mt-3 col-md-6">
+                                            <span class="input-group-text">
+                                                Diameter
+                                            </span>
+                                            <input type="number" name="diameter" id="output3" class="form-control"
+                                                disabled>
+                                            <span class="input-group-text">
+                                                mm
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <!-- end of main -->
+    </div>
+
+
+
+    <!-- JS -->
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/balanceWeight.js"></script>
+</body>
+
+</html>

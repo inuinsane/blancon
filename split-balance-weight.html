@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Aplikasi Split Balance Weight merupakan salah satu fitur unggulan dari aplikasi BLANCON. Proses perhitungan split balance weight umumnya dilakukan menggunakan kertas polar. Namun perlu keahlian dan ketelitian yang sangat tinggi dalam proses perhitungan tersebut karena berkaitan erat dengan penggambaran garis dan perhitungan trigonometri. Oleh karena itu, aplikasi BLANCON hadir sebagai solusi yang cepat, mudah, dan akurat dalam melakukan proses split balance weight.">
+
+    <link rel="shortcut icon" href="./favicon/android-chrome-512x512.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>BLANCON | Split Balance Weight</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg rounded-4 bg-light p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./favicon/only.png" alt="blancon-logo">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./balance-weight-mass.html">Balance Weight Mass</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./split-balance-weight.html">Split Balance Weight</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./residual-ubalance-standard.html">Residual Unbalance Standard</a>
+                        </li>
+                    </ul>
+                </div>
+                <span class="navbar-text">
+                    <strong class="text-info">
+                        BLANCON
+                    </strong>
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+
+    </div>
+    <!-- end of navbar -->
+
+    <!-- main -->
+    <main class="container">
+        <div class="row">
+            <!-- Petunjuk penggunaan -->
+            <div class="col-md-6 mt-2">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button bg-info text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong class="text-center">
+                                    Cara Penggunaan
+                                </strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ol>
+                                    <li>Masukkan nilai massa balance weight beserta sudutnya</li>
+                                    <li>Tentukan posisi sudut yang dituju untuk pemasangan balance weight</li>
+                                    <li>Klik tombol <button class="btn btn-info btn-sm text-white">Calculate !</button>
+                                        sehingga hasil perhitungan massa akan muncul untuk masing-masing sudut</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perhitungan -->
+            <div class="col-md-6 mt-2">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button bg-info text-white" type="button" data-bs-toggle=""
+                                data-bs-target="" aria-expanded="true" aria-controls="collapseTwo">
+                                <strong class="text-center">
+                                    Balance Weight Mass Calculator
+                                </strong>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row">
+
+                                    <!-- input massa yang hasil perhitungan -->
+                                    <label for="mass" class="mb-2">Correction Weight Results (Sesuai perhitungan
+                                        balancing)</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3 mt-1 col-md-6">
+                                            <span class="input-group-text">Mass</span>
+                                            <input type="number" class="form-control" placeholder="massa"
+                                                aria-label="mass" name="mass" id="mass">
+                                            <span class="input-group-text">gr</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- input posisi sudut hasil perhitungan -->
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3 mt-1 col-md-6">
+                                            <span class="input-group-text">Position</span>
+                                            <input type="number" class="form-control" placeholder="sudut"
+                                                aria-label="sudut" name="degree" id="degree">
+                                            <span class="input-group-text">deg</span>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- input posisi sudut yang diinginkan pertama -->
+                                    <label for="sudut1">Desired Position (Sudut yang diinginkan)</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3 mt-1 col-md-6">
+                                            <span class="input-group-text">Position A</span>
+                                            <input type="number" class="form-control" placeholder="sudut A"
+                                                aria-label="sudut1" name="sudut1" id="positiona">
+                                            <span class="input-group-text">deg</span>
+                                        </div>
+                                    </div>
+                                    <!-- input posisi sudut yang diinginkan kedua -->
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3 mt-1 col-md-6">
+                                            <span class="input-group-text">Position B</span>
+                                            <input type="number" class="form-control" placeholder="sudut B"
+                                                aria-label="sudut2" name="sudut2" id="positionb">
+                                            <span class="input-group-text">deg</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- tombol calculate -->
+                                    <div class="input-group mt-2 col-md-6">
+                                        <button class="btn btn-info text-white" id="tombol">
+                                            Calculate !
+                                        </button>
+                                        <button class="btn btn-white" id="refresh">
+                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                            Refresh
+                                        </button>
+                                    </div>
+
+
+                                    <!-- output -->
+                                    <div class="row mt-4">
+                                        <!-- Hasil massa A -->
+                                        <label for="sudut1">Results</label>
+                                        <div class="col-md-6">
+                                            <div class="input-group mb-3 mt-1 col-md-6">
+                                                <span class="input-group-text">Mass A</span>
+                                                <input type="number" class="form-control" disabled
+                                                    aria-label="output1" name="output1" id="output1">
+                                                <span class="input-group-text">gr</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Hasil sudut A -->
+                                        <div class="col-md-6">
+                                            <div class="input-group mb-3 mt-1 col-md-6">
+                                                <span class="input-group-text">Pos A</span>
+                                                <input type="number" class="form-control" disabled
+                                                    aria-label="output3" name="output3" id="output3">
+                                                <span class="input-group-text">deg</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Hasil massa B -->
+                                        <div class="col-md-6">
+                                            <div class="input-group mb-3 mt-1 col-md-6">
+                                                <span class="input-group-text">Mass B</span>
+                                                <input type="number" class="form-control" disabled
+                                                    aria-label="output2" name="output2" id="output2">
+                                                <span class="input-group-text">gr</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Hasil sudut B -->
+                                        <div class="col-md-6">
+                                            <div class="input-group mb-3 mt-1 col-md-6">
+                                                <span class="input-group-text">Pos B</span>
+                                                <input type="number" class="form-control" disabled
+                                                    aria-label="output4" name="output4" id="output4">
+                                                <span class="input-group-text">deg</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <!-- JS -->
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/splitWeight.js"></script>
+</body>
+
+</html>
