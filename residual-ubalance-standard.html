@@ -56,14 +56,164 @@
 
     </div>
     <main class="container">
-        <div class="bg-light p-5 rounded-4">
-            <h1 class="display-5 fw-bold text-info">Mohon Maaf!</h1>
-            <p class="lead" style="text-align: justify;">
-                Fitur ini masih dalam proses pengembangan.
-            </p>
-            <a href="mailto:ikbalkaito26@gmail.com" class="btn btn-info text-white">
-                More info &#xbb;
-            </a>
+        <div class="row">
+            <!-- Petunjuk penggunaan -->
+            <div class="col-md-6 mt-2">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button bg-info text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong class="text-center">
+                                    Cara Penggunaan
+                                </strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ol>
+                                    <li>Masukkan data massa, speed dan vibrasi peralatan (radius opsional)</li>
+                                    <li>Pilih standar (API687 atau ISO 1940)</li>
+                                    <li>Apabila anda memilih ISO 1940, anda harus memilih grade standar yang diinginkan
+                                    </li>
+                                    <li>Klik tombol
+                                        <button class="btn btn-info btn-sm text-white">Calculate !</button>
+                                        sehingga didapat nilai lebar (width), panjang
+                                        (length), dan diameter
+                                    </li>
+                                    <li>
+                                        Hasil unbalance dikatakan baik apabila nilai <strong> Equipment Residual
+                                            Unbalance </strong> kurang
+                                        dari nilai <strong> Permisible Residual Unbalance </strong>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perhitungan Standar -->
+            <div class="col-md-6 mt-2">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <!-- Header -->
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button bg-info text-white" type="button" data-bs-toggle=""
+                                data-bs-target="" aria-expanded="true" aria-controls="collapseTwo">
+                                <strong class="text-center">
+                                    Residual Unbalance Standard
+                                </strong>
+                            </button>
+                        </h2>
+
+                        <!-- Body -->
+                        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                                <!-- Bagian input -->
+                                <div class="row">
+
+                                    <!-- input nilai vibrasi equipment -->
+                                    <label for="mms" class="mb-2">
+                                        Equipment Data
+                                    </label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3 mt-1 col-md-6">
+                                            <span class="input-group-text">Vibration</span>
+                                            <input type="number" class="form-control" placeholder="vibration"
+                                                aria-label="vibration" name="mms" id="mms">
+                                            <span class="input-group-text">mm/s</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- input speed equipment -->
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3 mt-1 col-md-6">
+                                            <span class="input-group-text">Speed</span>
+                                            <input type="number" class="form-control" placeholder="speed"
+                                                aria-label="speed" name="speed" id="speed">
+                                            <span class="input-group-text">rpm</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- input massa equipment -->
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-3 mt-1 col-md-6">
+                                            <span class="input-group-text">Weight</span>
+                                            <input type="number" class="form-control" placeholder="massa rotor"
+                                                aria-label="rotor weight" name="rotorweight" id="rotorweight">
+                                            <span class="input-group-text">kg</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- input pilihan standar -->
+                                    <div class="col-md-6 mb-2">
+                                        <label for="standard" class="mb-1 mt-2">
+                                            Standard
+                                        </label>
+                                        <select name="standard" id="standard" class="form-select">
+                                            <option value="" disabled selected>choose standard</option>
+                                            <option value="ISO" id="ISO"> ISO 1940 </option>
+                                            <option value="API" id="API"> API 687 </option>
+                                        </select>
+                                    </div>
+
+                                    <!-- input grade ISO 1940 standar -->
+                                    <div class="col-md-6 mb-2">
+                                        <label for="grade" class="mb-1 mt-2 ">
+                                            Grade ISO 1940
+                                        </label>
+                                        <select name="grade" id="grade" class="form-select">
+                                            <option value="" disabled selected>choose grade</option>
+                                            <option value="g04" id="g04">G0.4</option>
+                                            <option value="g10" id="g10">G1.0</option>
+                                            <option value="g25" id="g25">G2.5</option>
+                                            <option value="g63" id="g63">G6.3</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- tombol calculate -->
+                                    <div class="input-group mt-3 col-md-6 mb-5">
+                                        <button class="btn btn-info text-white" id="tombol">
+                                            Calculate !
+                                        </button>
+                                        <button class="btn btn-white" id="refresh">
+                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                            Refresh
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                                <!-- Bagian Output -->
+                                <div class="row">
+                                    <!-- Hasil perhitungan residual unbalanced -->
+                                    <label for="output0">Equipment Residual Unbalance</label>
+                                    <div class="input-group mb-3 mt-1">
+                                        <span class="input-group-text">Actual</span>
+                                        <input type="text" class="form-control" disabled aria-label="Acper"
+                                            name="output0" id="output0">
+                                        <span class="input-group-text">gr.mm</span>
+                                    </div>
+
+                                    <!-- standard unbalanced -->
+                                    <label for="output1">Permisible Residual Unbalance</label>
+                                    <div class="input-group mb-3 mt-1">
+                                        <span class="input-group-text">Uper</span>
+                                        <input type="text" class="form-control" disabled aria-label="Uper"
+                                            name="output1" id="output1">
+                                        <span class="input-group-text">gr.mm</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -71,6 +221,8 @@
 
     <!-- JS -->
     <script src="./js/bootstrap.js"></script>
+    <script src="./js/jQuery.js"></script>
+    <script src="./js/standardUnbalanced.js"></script>
 </body>
 
 </html>
