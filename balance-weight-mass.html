@@ -108,7 +108,7 @@
                                     <div class="input-group mb-3 col-md-6">
                                         <span class="input-group-text">Weight</span>
                                         <input type="number" class="form-control" placeholder="massa"
-                                            aria-label="weight" name="weight" id="input1">
+                                            aria-label="weight" name="weight" id="massa">
                                         <span class="input-group-text">gr</span>
                                     </div>
 
@@ -116,7 +116,7 @@
                                     <div class="input-group mb-3 col-md-6">
                                         <span class="input-group-text">Depth</span>
                                         <input type="number" class="form-control" placeholder="tebal" aria-label="depth"
-                                            id="input2">
+                                            id="depth">
                                         <span class="input-group-text">mm</span>
                                     </div>
 
@@ -124,27 +124,16 @@
                                     <label for="material">Material</label>
                                     <select name="material" id="material" class="form-select">
                                         <option value="" disabled selected>choose material</option>
-                                        <option value="Alumunium" id="alm1"> Aluminiun </option>
-                                        <option value="Brass" id="brass1"> Brass </option>
-                                        <option value="Carbon" id="crb1"> Carbon </option>
-                                        <option value="Tin Bronze" id="tb1"> Tin Bronze </option>
-                                        <option value="Concrete" id="concrete1"> Concrete </option>
-                                        <option value="Copper" id="copper1"> Copper </option>
-                                        <option value="Carbon Steel" id="cs1"> Carbon Steel </option>
-                                        <option value="Chrome Steel" id="cs2"> Chrome Steel </option>
-                                        <option value="White iron" id="wi1"> White iron </option>
-                                        <option value="Stainless steel" id="ss1"> Stainless steel (304) </option>
-                                        <option value="Titanium alloy" id="ta1"> Titanium alloy </option>
                                     </select>
 
                                     <!-- input bentuk dimensi -->
-                                    <label for="form" class="mt-2">Form (Bentuk)</label>
-                                    <select name="form" id="form" class="form-select">
+                                    <label for="form" class="mt-2">Form (Rasio bentuk)</label>
+                                    <select name="ratio" id="ratio" class="form-select">
                                         <option value="" disabled selected>choose form</option>
-                                        <option value="lw11" id="lw11"> Length and width (1:1) </option>
-                                        <option value="lw21" id="lw21"> Length and width (2:1) </option>
-                                        <option value="lw43" id="lw43"> Length and width (4:3) </option>
-                                        <option value="Circle" id="circle">Circle </option>
+                                        <option value="1:1" > Length and width (1:1) </option>
+                                        <option value="2:1" > Length and width (2:1) </option>
+                                        <option value="4:3" > Length and width (4:3) </option>
+                                        <option value="round" id="circle">Circle </option>
                                     </select>
 
 
@@ -166,7 +155,7 @@
                                             <span class="input-group-text">
                                                 Length (Panjang)
                                             </span>
-                                            <input type="number" name="length" id="output2" class="form-control"
+                                            <input type="number" name="length" id="outputPanjang" class="form-control"
                                                 disabled>
                                             <span class="input-group-text">
                                                 mm
@@ -176,7 +165,7 @@
                                             <span class="input-group-text">
                                                 Width (Lebar)
                                             </span>
-                                            <input type="number" name="width" id="output1" class="form-control"
+                                            <input type="number" name="width" id="outputLebar" class="form-control"
                                                 disabled>
                                             <span class="input-group-text">
                                                 mm
@@ -186,7 +175,7 @@
                                             <span class="input-group-text">
                                                 Diameter
                                             </span>
-                                            <input type="number" name="diameter" id="output3" class="form-control"
+                                            <input type="number" name="diameter" id="outputRound" class="form-control"
                                                 disabled>
                                             <span class="input-group-text">
                                                 mm
@@ -209,7 +198,9 @@
 
     <!-- JS -->
     <script src="./js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/balanceWeight.js"></script>
+
 </body>
 
 </html>
